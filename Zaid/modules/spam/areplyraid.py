@@ -3,7 +3,7 @@ import sys
 import asyncio
 import re
 from random import choice
-from pyrogram import Client, filters
+from pyrogram import errors, Client, filters, 
 from pyrogram.types import Message
 from cache.data import *
 from Zaid.database.rraid import *
