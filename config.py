@@ -13,7 +13,7 @@ PM_LOGGER = getenv("PM_LOGGER")
 LOG_GROUP = getenv("LOG_GROUP")
 GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
 REPO_URL = getenv("REPO_URL", "https://github.com/mrxbroken011/Absir")
-BRANCH = getenv("BRANCH", "master") #don't change
+BRANCH = getenv("BRANCH", "koyeb") #don't change
  
 STRING_SESSION1 = getenv("STRING_SESSION1", "")
 STRING_SESSION2 = getenv("STRING_SESSION2", "")
