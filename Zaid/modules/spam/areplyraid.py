@@ -14,7 +14,7 @@ from Zaid.helper.PyroHelpers import get_ub_chats
 from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
 
 SUDO_USERS = SUDO_USER
-DEVS = [7374966263]  # Assuming DEVS should be a list
+DEVS = int(7374966263)  
 
 raidreply = [ 
     "𝗠𝗔̂𝗔̂𝗗𝗔𝗥𝗖𝗛Ø𝗗 𝗧𝗘𝗥𝗜 𝗠𝗔́𝗔̀ 𝗞𝗜 𝗖𝗛𝗨𝗨́𝗧 𝗠𝗘 𝗚𝗛𝗨𝗧𝗞𝗔 𝗞𝗛𝗔𝗔𝗞𝗘 𝗧𝗛𝗢𝗢𝗞 𝗗𝗨𝗡𝗚𝗔 🤣🤣",
@@ -182,3 +182,4 @@ async def gmute_user(client: Client, message: Message):
         )
     except Exception as e:
         await sent_message.edit(f"**ERROR:** `{e}`")
+#error Fixed by MR BROKEN
