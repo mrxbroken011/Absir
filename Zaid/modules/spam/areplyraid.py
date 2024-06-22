@@ -8,14 +8,13 @@ from pyrogram.types import Message
 from cache.data import *
 from Zaid.database.rraid import *
 from Zaid import SUDO_USER
-from pyrogram import Client, errors, filters
+from pyrogram import errors
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(7374966263)
 from Zaid.helper.PyroHelpers import get_ub_chats
 from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
+
 SUDO_USERS = SUDO_USER
-
-
+DEVS = [7374966263]  # Assuming DEVS should be a list
 
 raidreply = [ 
     "𝗠𝗔̂𝗔̂𝗗𝗔𝗥𝗖𝗛Ø𝗗 𝗧𝗘𝗥𝗜 𝗠𝗔́𝗔̀ 𝗞𝗜 𝗖𝗛𝗨𝗨́𝗧 𝗠𝗘 𝗚𝗛𝗨𝗧𝗞𝗔 𝗞𝗛𝗔𝗔𝗞𝗘 𝗧𝗛𝗢𝗢𝗞 𝗗𝗨𝗡𝗚𝗔 🤣🤣",
@@ -137,9 +136,7 @@ raidreply = [
     "𝗦𝗨𝗡 𝗦𝗨𝗡 𝗦𝗨𝗔𝗥 𝗞𝗘 𝗣𝗜𝗟𝗟𝗘 𝗝𝗛𝗔𝗡𝗧𝗢 𝗞𝗘 𝗦𝗢𝗨𝗗𝗔𝗚𝗔𝗥 𝗔𝗣𝗡𝗜 𝗠𝗨𝗠𝗠𝗬 𝗞𝗜 𝗡𝗨𝗗𝗘𝗦 𝗕𝗛𝗘𝗝",
     "𝗔𝗕𝗘 𝗦𝗨𝗡 𝗟𝗢𝗗𝗘 𝗧𝗘𝗥𝗜 𝗕𝗘́𝗛𝗘𝗡 𝗞𝗔 𝗕𝗛𝗢𝗦𝗗𝗔 𝗙𝗔𝗔𝗗 𝗗𝗨𝗡𝗚𝗔",
     "𝗧𝗘𝗥𝗜 𝗠𝗔́𝗔̀𝗞𝗢 𝗞𝗛𝗨𝗟𝗘 𝗕𝗔𝗝𝗔𝗥 𝗠𝗘 𝗖𝗛𝗢𝗗 𝗗𝗔𝗟𝗔 🤣🤣💋",
-    ]
-
-
+]
 
 @Client.on_message(
     filters.command(["reraid"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -148,25 +145,31 @@ async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
     sent_message = await message.reply("`Processing...`")
+    
+    user = None
+
     if args:
         try:
             user = await client.get_users(args)
         except Exception:
-            await sent_message.edit(f"`Please specify a valid user!`")
+            await sent_message.edit("`Please specify a valid user!`")
             return
     elif reply:
         user_id = reply.from_user.id
         user = await client.get_users(user_id)
     else:
-        await sent_message.edit(f"`Please specify a valid user!`")
+        await sent_message.edit("`Please specify a valid user!`")
         return
 
     if user.id == client.me.id:
-        return await sent_message.edit("**Okay Sure.. 🐽**")
+        await sent_message.edit("**Okay Sure.. 🐽**")
+        return
     elif user.id in SUDO_USERS:
-        return await sent_message.edit("**Okay But Failed Because this user is in sudos.. 🐽**")
+        await sent_message.edit("**Okay But Failed Because this user is in sudos.. 🐽**")
+        return
     elif user.id in VERIFIED_USERS:
-        return await sent_message.edit("**Chal Chal Baap ko Mat sikha.. 🐽**")
+        await sent_message.edit("**Chal Chal Baap ko Mat sikha.. 🐽**")
+        return
 
     try:
         if user.id in (await get_rraid_users()):
@@ -175,7 +178,7 @@ async def gmute_user(client: Client, message: Message):
         await rraid_user(user.id)
         RAIDS.append(user.id)
         await message.reply_text(
-        text = (f"[{user.first_name}](tg://user?id={user.id})"random.choice(raidreply))
-        except Exception as e:
+            text=f"[{user.first_name}](tg://user?id={user.id}) {random.choice(raidreply)}"
+        )
+    except Exception as e:
         await sent_message.edit(f"**ERROR:** `{e}`")
-        return
