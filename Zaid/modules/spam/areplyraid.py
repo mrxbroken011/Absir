@@ -16,40 +16,40 @@ from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
 from .replyraid import RAIDS
 
-
-
 @Client.on_message(
-    filters.command(["replyraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["reraid"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gmute_user(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
-    ex = await message.edit_text("`Processing...`")
+    sent_message = await message.reply("`Processing...`")
     if args:
         try:
             user = await client.get_users(args)
         except Exception:
-            await ex.edit(f"`Please specify a valid user!`")
+            await sent_message.edit(f"`Please specify a valid user!`")
             return
     elif reply:
         user_id = reply.from_user.id
         user = await client.get_users(user_id)
     else:
-        await ex.edit(f"`Please specify a valid user!`")
+        await sent_message.edit(f"`Please specify a valid user!`")
         return
+
     if user.id == client.me.id:
-        return await ex.edit("**Okay Sure.. 🐽**")
-    elif user.id == SUDO_USERS:
-        return await ex.edit("**Okay But Failed Because this user in sudos.. 🐽**")
-    elif user.id == VERIFIED_USERS:
-        return await ex.edit("**Chal Chal Baap ko Mat sikha.. 🐽**")
+        return await sent_message.edit("**Okay Sure.. 🐽**")
+    elif user.id in SUDO_USERS:
+        return await sent_message.edit("**Okay But Failed Because this user is in sudos.. 🐽**")
+    elif user.id in VERIFIED_USERS:
+        return await sent_message.edit("**Chal Chal Baap ko Mat sikha.. 🐽**")
+
     try:
         if user.id in (await get_rraid_users()):
-           await ex.edit("Replyraid is activated on this user")
-           return
+            await sent_message.edit("Replyraid is already activated on this user")
+            return
         await rraid_user(user.id)
         RAIDS.append(user.id)
-        await ex.edit(f"[{user.first_name}](tg://user?id={user.id}) Activated ReplyRaid!")
+        await sent_message.edit(f"[{user.first_name}](tg://user?id={user.id}) Activated ReplyRaid!")
     except Exception as e:
-        await ex.edit(f"**ERROR:** `{e}`")
+        await sent_message.edit(f"**ERROR:** `{e}`")
         return
