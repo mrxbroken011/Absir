@@ -5,7 +5,7 @@ import re
 import random
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from cache.data import VERIFIED_USERS, RAIDS
+from cache.data import VERIFIED_USERS
 from Zaid.database.rraid import get_rraid_users, rraid_user
 from Zaid import SUDO_USER
 from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UserAdminInvalid
