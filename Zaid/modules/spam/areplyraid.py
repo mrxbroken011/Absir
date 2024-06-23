@@ -187,5 +187,3 @@ async def gmute_user(client: Client, message: Message):
     except Exception as e:
         await sent_message.edit(f"**ERROR:** `{e}`")
 
-
-#error Fixed by MR BROKEN
