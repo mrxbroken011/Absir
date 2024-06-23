@@ -16,9 +16,9 @@ BOT_TOKEN = getenv("BOT_TOKEN", "")
 ALIVE_PIC = getenv("ALIVE_PIC", 'https://telegra.ph/file/91c6683a0074d9dce03c1.jpg')
 ALIVE_TEXT = getenv("ALIVE_TEXT")
 PM_LOGGER = getenv("PM_LOGGER")
-LOG_GROUP = getenv("LOG_GROUP")
+LOG_GROUP = getenv("LOG_GROUP" -1002094142057)
 GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
-REPO_URL = getenv("REPO_URL", "https://github.com/ITZ-ZAID/ZAID-USERBOT")
+REPO_URL = getenv("REPO_URL", "https://github.com/Mrxbroken011/Absir")
 BRANCH = getenv("BRANCH", "master") #don't change
  
 STRING_SESSION1 = getenv("STRING_SESSION1", "")
