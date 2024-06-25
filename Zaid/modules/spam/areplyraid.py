@@ -14,7 +14,7 @@ DEVS = int(7374966263)
 from Zaid.helper.PyroHelpers import get_ub_chats
 from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
-from .replyraid import RAIDS
+from Zaid.modules.spam.replyraid import RAIDS
 
 
 
