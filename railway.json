@@ -5,9 +5,9 @@
       "plan": "free",
       "name": "Zaid",
       "env": "python",
-      "buildCommand": "pip install -U -r requirements.txt",
-      "startCommand": "python3 server.py & python3 -m Zaid",
-      "repo": "https://github.com/mrxbroken011/absir",
+      "buildCommand": null,
+      "startCommand": null,
+      "repo": "https://github.com/mrxbroken011/Absir",
       "branch": "master",
       "envVars": [
         { "key": "SUDO_USERS", "sync": false },
@@ -16,7 +16,12 @@
         { "key": "STRING_SESSION1", "sync": false },
         { "key": "MONGO_URL", "sync": false }
       ],
-      "autoDeploy": false
+      "autoDeploy": false,
+      "builds": {
+        "dockerfilePath": "Dockerfile",
+        "context": "."
+      },
+      "runCommand": "python3 -m Zaid"
     }
   ]
 }
