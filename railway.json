@@ -3,7 +3,7 @@
     {
       "type": "web",
       "plan": "free",
-      "name": "Broken",
+      "name": "Zaid",
       "env": "python",
       "buildCommand": "pip install -U -r requirements.txt",
       "startCommand": "python3 server.py & python3 -m Zaid",
