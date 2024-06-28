@@ -58,13 +58,13 @@ async def alive_function(message: Message, answers):
 <b> • Pyrogram Version :</b> <code>{pyrover}</code>
 <b> • Bot Uptime :</b> <code>{uptime}</code>
 
-<b> — Bot version: 2.0</b>
+<b> — Bot version: 2.0</b> \n\n BY @BrokenxNetwork
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/cc0890d0876bc18c19e05.jpg",
+            thumb_url="https://telegra.ph/file/91c6683a0074d9dce03c1.jpg",
             input_message_content=InputTextMessageContent(
                 msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
             ),
@@ -82,7 +82,7 @@ async def help_function(answers):
         InlineQueryResultArticle(
             title="Help Article!",
             description="Check Command List & Help",
-            thumb_url="https://telegra.ph/file/cc0890d0876bc18c19e05.jpg",
+            thumb_url="https://telegra.ph/file/91c6683a0074d9dce03c1.jpg",
             input_message_content=InputTextMessageContent(
                 Data.text_help_menu.format(len(CMD_HELP))
             ),
