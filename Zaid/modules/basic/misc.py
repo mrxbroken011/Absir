@@ -11,20 +11,21 @@ from Zaid.helper.PyroHelpers import ReplyCheck
 from Zaid.modules.help import add_command_help
 from Zaid.modules.bot.inline import get_readable_time
 
-alive_logo = ALIVE_PIC or "https://telegra.ph/file/cc0890d0876bc18c19e05.jpg"
+alive_logo = ALIVE_PIC or "https://telegra.ph/file/91c6683a0074d9dce03c1.jpg"
 
 if ALIVE_TEXT:
    txt = ALIVE_TEXT
 else:
     txt = (
-        f"** ✘ zαι∂ υѕєявσт ✘**\n\n"
-        f"❏ **νєяѕισи**: `2.1`\n"
+        f"** ✘ вяσкєη χ υѕєявσт ✘**\n\n"
+        f"❏ **νєяѕισи**: `3.1`\n"
         f"├• **υρтιмє**: `{str(datetime.now() - START_TIME).split('.')[0]}`\n"
         f"├• **ρутнσи**: `{python_version()}`\n"
         f"├• **ρуяσgяαм**: `{__version__}`\n"
-        f"├• **ѕυρρσят**: [Click](t.me/TheSupportChat)\n"
-        f"├• **¢нαииєℓ**: [Click](t.me/TheUpdatesChannel)\n"
-        f"└• **яєρσ**: [Click](https://GitHub.com/itz-zaid/Zaid-Userbot)"        
+        f"├• **ѕυρρσят**: [Click](t.me/broknxsupport)\n"
+        f"├• **¢нαииєℓ**: [Click](t.me/brokenxnetwork)\n"
+        f"├• **∂єνℓσρєя**: [Click](https://t.me/aboutbrokenx)\n"
+        f"└• **ωαηт ѕυ∂σ**: [𝐆ɪᴠᴇ 𝐌ᴇ 𝐒ᴜᴅᴏ](https://t.me/MrBroken)"
     )
 
 @Client.on_message(
@@ -51,18 +52,18 @@ async def alive(client: Client, message: Message):
     except BaseException:
         await xx.edit(xd, disable_web_page_preview=True)
 
-@Client.on_message(filters.command("repo", ".") & filters.me)
-async def repo(bot: Client, message: Message):
-    await message.edit("⚡")
-    await asyncio.sleep(1)
-    await message.edit("Fetching Source Code.....")
-    await asyncio.sleep(1)
-    await message.edit("Here is repo: \n\n\nhttps://github.com/itz-zaid/Zaid-UserBot\nFork & Give an ⭐")
+#@Client.on_message(filters.command("olxx", ".") & filters.me)
+#async def repo(bot: Client, message: Message):
+ #   await message.edit("⚡")
+ #   await asyncio.sleep(1)
+ #   await message.edit("Fetching Source Code.....")
+ #   await asyncio.sleep(1)
+  #  await message.edit("Here is repo: \n\n\nhttps://github.com/itz-zaid/Zaid-UserBot\nFork & Give an ⭐")
 
 
 @Client.on_message(filters.command("creator", ".") & filters.me)
 async def creator(bot: Client, message: Message):
-    await message.edit("https://gitHub.com/itz-zaid")
+    await message.edit("https://t.me/aboutbrokenx")
 
 
 @Client.on_message(filters.command(["uptime", "up"], ".") & filters.me)
@@ -167,7 +168,7 @@ add_command_help(
     "start",
     [
         [".alive", "Check if the bot is alive or not."],
-        [".repo", "Display the repo of this userbot."],
+       # [".repo", "Display the repo of this userbot."],
         [".creator", "Show the creator of this userbot."],
         [".id", "Send id of what you replied to."],
         [".up `or` .uptime", "Check bot's current uptime."],
@@ -179,4 +180,4 @@ add_command_help(
     [
         [".restart", "You are retarded if you do not know what this does."],
     ],
-)
+       )
