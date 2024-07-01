@@ -15,8 +15,7 @@ GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
 REPO_URL = getenv("REPO_URL", "https://github.com/mrxbroken011/Absir")
 BRANCH = getenv("BRANCH", "master") #don't change
  
-STRING_SESSION1 = getenv("STRING_SESSION1", "1BVtsOJMBu6_RU5xtjzlHXLEvgBDlIn6B1dwcrih_0DzRE3QX8PxE9vpRLNpkORHr6n1cOdnJc1HIWlwWh9ut-grUioHTxH1K63iMZrc-AIHDhVN0XiuczgJUkJDTS2zuMHgAE5J3z2vdZNUhViDXB-zCEfVAe9v4zstqk7XUK0MO1jbPfiA9vFWtzcdcZ0Ze3M5hqSvN2ebLWDc3jKwnfXtHS2zbX440BjAh81Zs_HQ4Hmn__r7JdICP1xE1iMfmW2E7tilEBQmH2jxgQ7aiGwJoxuv_4UjXxYsgG8CkVbSuNCWvqkIzoKnFDyXia_5Nhrnca-7gYx_I4HBdUEfHCv2JN8wDbsc=")
-STRING_SESSION2 = getenv("STRING_SESSION2", "")
+STRING_SESSION1 = getenv("STRING_SESSION1", "") 
 STRING_SESSION3 = getenv("STRING_SESSION3", "")
 STRING_SESSION4 = getenv("STRING_SESSION4", "")
 STRING_SESSION5 = getenv("STRING_SESSION5", "")
