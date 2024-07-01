@@ -1,12 +1,12 @@
-from Zaid import app
+from Zaid import app, API_ID, API_HASH
 from config import OWNER_ID, ALIVE_PIC, SUDO_USERS
 from pyrogram import filters
 import os
 import re
 import asyncio
 import time
-from pyrogram import filters
-
+from pyrogram import *
+from pyrogram.types import *
 
 PHONE_NUMBER_TEXT = (
     "✘ Hey Contact  My Master If You Wanna Clone!\n\n✘ I'm Your Assistant?\n\n‣ I can help you to host Your Left Clients.\n\n‣ This specially for Buzzy People's(lazy)\n\n‣ Now /bash {send your PyroGram String Session}"
