@@ -1,5 +1,7 @@
-flask
 gunicorn
+pyrogram
+pymongo
+flask
 aiohttp
 aiofiles
 bs4
@@ -11,8 +13,6 @@ heroku3
 requests
 motor==3.0.0
 opencv-python-headless
-pyrogram
-pymongo
 pymediainfo
 prettytable
 git+https://github.com/Itz-fork/py-trans.git
