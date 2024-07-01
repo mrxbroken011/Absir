@@ -1,7 +1,7 @@
 from os import getenv
 
-API_ID = int(getenv("API_ID", "6435225")) #optional
-API_HASH = getenv("API_HASH", "") #optional
+API_ID = int(getenv("API_ID", "22138812")) #optional
+API_HASH = getenv("API_HASH", "83f6908fe0c90bf7a6586be34939a170") #optional
 
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1841914911").split()))
 OWNER_ID = int(getenv("OWNER_ID", "7374966263"))
