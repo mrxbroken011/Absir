@@ -1,8 +1,8 @@
 {
-    "name": "Zaid Userbot",
+    "name": "broken x bot",
     "description": "An first Telegram Userbot with multi Clients for Spamming or Mass.",
     "keywords": ["telegram" "userbot", "Zaid", "pyrogram"],
-    "repository": "https://github.com/ITZ-ZAID/ZAID-USERBOT",
+    "repository": "https://github.com/mrxbroken011/Absir",
   "stack": "container",
     "env": {
         "STRING_SESSION1": {
